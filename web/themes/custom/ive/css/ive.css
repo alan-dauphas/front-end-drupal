@@ -32,3 +32,12 @@
   font-style:italic;
   border-bottom:1px solid orange;
 }
+
+.container-colonne {
+  display: flex;
+  justify-content: center;
+}
+.colone1, .colone2{
+  display: block;
+  width: 50%;
+}
