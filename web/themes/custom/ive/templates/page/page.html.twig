@@ -52,6 +52,7 @@
 #}
 <div id="page-wrapper">
   <div id="page">
+  {% block header %}
     <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t }}">
       <div class="section layout-container clearfix">
         {{ page.secondary_menu }}
@@ -59,6 +60,7 @@
         {{ page.primary_menu }}
       </div>
     </header>
+
     {% if page.highlighted %}
       <div class="highlighted">
         <aside class="layout-container section clearfix" role="complementary">
@@ -73,12 +75,17 @@
         </aside>
       </div>
     {% endif %}
+  {% endblock %}
+
+  {% block main %}
     <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
       <div id="main" class="layout-main clearfix">
         {{ page.breadcrumb }}
         <main id="content" class="column main-content" role="main">
           <section class="section">
             <a id="main-content" tabindex="-1"></a>
+
+
             {{ page.content }}
           </section>
         </main>
@@ -98,7 +105,10 @@
         {% endif %}
       </div>
     </div>
+  {% endblock %}
 
+
+  {% block footer %}
     {% if page.bottom_wide %}
       <div id="bottom_wide" class="bottom_wide">
         <aside class="layout-container section clearfix" role="complementary">
@@ -120,6 +130,8 @@
       <div class="layout-container">
         {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
           <div class="site-footer__top clearfix">
+
+
             {{ page.footer_first }}
             {{ page.footer_second }}
             {{ page.footer_third }}
@@ -133,5 +145,7 @@
         {% endif %}
       </div>
     </footer>
+  {% endblock %}
+
   </div>
 </div>
